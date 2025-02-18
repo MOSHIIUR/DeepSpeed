@@ -70,6 +70,10 @@ class MoE(nn.Module):
         '''
 
 
+        log_dist(
+            f'Creating MoE layer with num_experts: {num_experts} | num_local_experts: {self.num_local_experts} | expert_parallel_size: {self.ep_size}',
+            [0])
+
         assert noisy_gate_policy is None or noisy_gate_policy in ['None', 'Jitter', 'RSample'], \
             'Unsupported noisy_gate_policy: ' + noisy_gate_policy
 
