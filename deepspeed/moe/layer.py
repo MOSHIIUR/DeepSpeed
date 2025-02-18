@@ -79,6 +79,7 @@ class MoE(nn.Module):
 
         
         experts = Experts(expert, self.num_local_experts, self.expert_group_name)
+        log_dist('---')
         log_dist(experts)
         log_dist('---')
         
