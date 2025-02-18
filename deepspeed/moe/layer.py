@@ -79,8 +79,8 @@ class MoE(nn.Module):
 
         
         experts = Experts(expert, self.num_local_experts, self.expert_group_name)
-        print(experts)
-        print('---')
+        log_dist(experts)
+        log_dist('---')
         
         self.deepspeed_moe = MOELayer(TopKGate(hidden_size, num_experts, k, capacity_factor, eval_capacity_factor,
                                                min_capacity, noisy_gate_policy, drop_tokens, use_rts, None,
